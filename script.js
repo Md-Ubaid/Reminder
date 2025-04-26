@@ -4,6 +4,15 @@ emailjs.init('1ZGLkC5ODKZdWBExC'); // Replace with your EmailJS user ID
 const form = document.getElementById('reminderForm');
 const messageDiv = document.getElementById('message');
 
+// Helper function to format phone numbers
+function formatPhoneNumber(number) {
+  number = number.replace(/\s+/g, ''); // remove all spaces
+  if (!number.startsWith('+')) {
+    return '+' + number;
+  }
+  return number;
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -11,8 +20,8 @@ form.addEventListener('submit', (e) => {
     patientName: document.getElementById('patientName').value,
     medicine: document.getElementById('medicine').value,
     time: document.getElementById('time').value,
-    phoneNumber: document.getElementById('phoneNumber').value,
-    familyContact: document.getElementById('familyContact').value,
+    phoneNumber: formatPhoneNumber(document.getElementById('phoneNumber').value),
+    familyContact: formatPhoneNumber(document.getElementById('familyContact').value),
     email: document.getElementById('email').value
   };
 
@@ -23,7 +32,7 @@ form.addEventListener('submit', (e) => {
     body: JSON.stringify(formData),
     headers: { 'Content-Type': 'application/json' }
   })
-  .then(() => {  // ✅ Just assume success, don't check response
+  .then(() => {  // ✅ Assume success (because of 'no-cors')
     console.log("Data sent to Google Sheets (no-cors, no confirmation).");
     messageDiv.innerText = "Reminder saved successfully!";
     
