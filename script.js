@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
   };
 
   // 1. Save to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbyWriqb6aDDRlUXEd7GPw8JidJURtPzBvTVAsGnLC9jctZyz5NNkL0GxaCgZDO3AfIJIA/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbw8V2k3uvbu8q2CCw5CB6ZurX5CYpK0ndy8wxx7hZLQQTcNz_n8uHP1190_K2a1THJPUA/exec', {
     method: 'POST',
     mode: 'no-cors',
     body: JSON.stringify(formData),
