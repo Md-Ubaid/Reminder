@@ -23,15 +23,8 @@ form.addEventListener('submit', (e) => {
     body: JSON.stringify(formData),
     headers: { 'Content-Type': 'application/json' }
   })
-  .then(response => {
-    if (response.ok) {
-      return response.json();  // Parse JSON response from Google Apps Script
-    } else {
-      throw new Error("Error saving reminder");
-    }
-  })
-  .then(data => {
-    console.log("Google Apps Script Response:", data);  // Log response data
+  .then(() => {  // ✅ Just assume success, don't check response
+    console.log("Data sent to Google Sheets (no-cors, no confirmation).");
     messageDiv.innerText = "Reminder saved successfully!";
     
     // 2. Send Email via EmailJS
