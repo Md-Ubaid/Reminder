@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medication Reminder System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Medication Reminder</h1>
+
+    <form id="reminderForm">
+      <input type="text" id="patientName" placeholder="Patient Name" required><br>
+      <input type="text" id="medicine" placeholder="Medicine Name" required><br>
+      <input type="time" id="time" required><br>
+      <input type="text" id="phoneNumber" placeholder="Patient Phone (+1234567890)" required><br>
+      <input type="text" id="familyContact" placeholder="Family Contact Phone (+1234567891)" required><br>
+      <input type="email" id="email" placeholder="Family Email" required><br>
+      <button type="submit">Save Reminder</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
