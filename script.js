@@ -19,6 +19,7 @@ form.addEventListener('submit', (e) => {
   // 1. Save to Google Sheets
   fetch('https://script.google.com/macros/s/AKfycbw3ut5OFuxPnt0R96o5uBxnKvKmjne3Un_MgaNRSY6HVT7Na1PyWexBwd-OGan6npRZIA/exec', {
     method: 'POST',
+    mode: 'no-cors',
     body: JSON.stringify(formData),
     headers: { 'Content-Type': 'application/json' }
   })
